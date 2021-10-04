@@ -1,12 +1,13 @@
 from django.shortcuts import render, HttpResponse
 import datetime
+from rest_framework import generics
+from . import serializers, models
 # TO send messages
 from django.contrib import messages
 
 # Create your views here.
 def index(request):
     return HttpResponse("This is Home Page")
-    # return HttpResponse("This is Home Page")
 
 def about(request):
     return HttpResponse("This is About Page")
@@ -16,3 +17,8 @@ def contact(request):
 
 def services(request):
     return HttpResponse("This is Services Page")
+
+class Product(generics.ListAPIView):
+    serializer_class = serializers.ProductList
+    queryset = models.Inventory.objects.all()
+    
