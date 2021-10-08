@@ -21,4 +21,4 @@ def services(request):
 
 class Products(generics.ListAPIView):
     serializer_class = serializers.ProductList
-    queryset = models.AllOrders.objects.all()
+    queryset = models.Products.objects.all()
