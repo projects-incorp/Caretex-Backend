@@ -5,9 +5,3 @@ class ProductList(serializers.ModelSerializer):
     class Meta:
         model = models.Products
         fields = '__all__'
-
-class UserSerializer():
-
-     class Meta:
-         model = User
-         fields = ['id', 'username']
