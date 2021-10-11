@@ -14,6 +14,7 @@ def index(request):
     return HttpResponse("This is Home Page")
     # return HttpResponse("This is Home Page")
 
+#Register User
 def signup(request):
     register = forms.CreateUser()
     if request.method == 'POST':
@@ -23,6 +24,7 @@ def signup(request):
             return redirect('/')
     return render(request, '/')
 
+# Login User
 def loginUser(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -40,6 +42,7 @@ def loginUser(request):
     #login page
     return render(request, '/')
 
+# Logout User
 def logoutUser(request):
     #redirect to login page
     if request.method == 'POST':
