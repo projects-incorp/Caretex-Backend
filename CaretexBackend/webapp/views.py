@@ -12,7 +12,6 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     return HttpResponse("This is Home Page")
-    # return HttpResponse("This is Home Page")
 
 #Register User
 def signup(request):
